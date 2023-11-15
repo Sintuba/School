@@ -1,0 +1,59 @@
+.js-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+  background: #fff;
+  transition: opacity 0.8s, visibility 0.8s;
+  z-index: 10000;
+}
+.is-loaded .js-loader {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-loader-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  animation: progressAnimation  1.4s ease-in-out infinite;
+  opacity: 0;
+
+}
+
+@keyframes progressAnimation{
+	0%{
+
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+.is-loaded .js-loader-progress {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-loader-progress-bar {
+  background: #000;
+  height: 100%;
+  width: 0;
+  transition: width 0.4s;
+}
+
+.js-loader-progress-number {
+  text-align: center;
+  font-size: 1.3rem;
+  width: 100%;
+  margin-top: 10px;
+}/*# sourceMappingURL=loading.css.map */

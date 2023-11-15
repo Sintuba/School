@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀬戸屋｜ご予約</title>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+    <link rel="stylesheet" href="./css/reserve.css">
+
+    <!-- <link rel="stylesheet" href="./css/contact.css"> -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css"
+      integrity="sha256-GzSkJVLJbxDk36qko2cnawOGiqz/Y8GsQv/jMTUrx1Q="
+      crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/themes/material_blue.css"
+      integrity="sha256-vxrocMyy3+x+gmiNuoCS5Iv5rEurStwP6vnN5Mr1PfA="
+      crossorigin="anonymous"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Rubik&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600&display=swap"
+      rel="stylesheet" />
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"
+        integrity="sha256-Huqxy3eUcaCwqqk92RwusapTfWlvAasF6p2rxV6FJaE="
+        crossorigin="anonymous"></script>
+      <!-- <script
+        src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/l10n/ja.js"
+        integrity="sha256-us400PA8+wpkgAkYwnKn7ueJbkk00UuwAcqrHqLGQJw="
+        crossorigin="anonymous"></script>
+      --> <script 
+       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="icon" href="./image/fav.png">
+  </head>
+
+  <body>
+    <header>
+      <div class="logo char">
+        <a href="index.html">
+          <p>祈りの里</p>
+          <p>西海</p>
+          <h1>瀬戸屋<img src="#" alt /></h1>
+        </a>
+      </div>
+
+    </header>
+    <main>
+      <article class="wrapper" id="contact">
+        <section>
+          <div class="section-title">
+            <h1>ご予約</h1>
+          </div>
+          <div class="contact-text">
+            <p>下記のフォームにご入力の上、内容確認画面へお進みください。</p>
+          </div>
+          <form action method="post">
+            <div class="Form">
+        
+              <div class="Form-Item">
+                <p class="Form-Item-Label"><span
+                  class="Form-Item-Label-Required">必須</span>ご宿泊日
+              </p>
+             <div class="checkStyle">
+                  <label for="checkin-date">
+                    <p >
+                      チェックイン日:
+                    </p>
+                      <input class="Form-Item-Input" type="text"
+                        id="checkin-date"
+                        name="checkin-date" placeholder="日付を選択してください" required>
+                   
+                  </label>
+                </div>
+  
+                <label for="checkout-date">
+                  <p>チェックアウト日:  </p>
+                    <input type="text"
+                      class="Form-Item-Input" id="checkout-date"
+                      name="checkout-date" placeholder="日付を選択してください" required>
+                
+                </label>
+             </div>
+              </div>
+              <div class="Form-Item">
+                <label>
+                  <p class="Form-Item-Label">
+                    <span class="Form-Item-Label-Required">必須</span>
+                    部屋タイプ
+                  </p>
+                </label>
+                <select class="Form-Item-Input" required>
+                  <option value="山側和室">【山側】 和室</option>
+                  <option value="川側二間和洋室">【川側】 二間和洋室</option>
+                  <option value="川側和室または和洋室">【川側】 和室または和洋室</option>
+                </select>
+              </div>
+              <div class="Form-Item">
+                <label>
+                  <p class="Form-Item-Label">
+                    <span class="Form-Item-Label-Required">必須</span>
+                    ご宿泊者数
+                  </p>
+                </label>
+                <select class="Form-Item-Input" id="adults">
+                  <p>
+                    大人：<br>
+
+                    <option value="0">大人</option>
+                    <option value="1">1名</option>
+                    <option value="2">2名</option>
+                    <option value="3">3名</option>
+                    <option value="4">4名</option>
+                    <option value="5">5名</option>
+                    <option value="6">6名</option>
+                    <option value="7">7名</option>
+                    <option value="8">8名</option>
+                    <option value="9">9名</option>
+                 </p>
+                  <!-- 必要なオプションを追加 -->
+                </select>
+                
+                <select class="Form-Item-Input" id="children">
+                  
+                  <p>
+                    子供：<br>
+                    <option value="0">子供</option>
+                    <option value="1">1名</option>
+                    <option value="2">2名</option>
+                    <option value="3">3名</option>
+                    <option value="4">4名</option>
+                    <option value="5">5名</option>
+                    <option value="6">6名</option>
+                    <option value="7">7名</option>
+                    <option value="8">8名</option>
+                    <option value="9">9名</option>
+                  </p>
+                  <!-- 必要なオプションを追加 -->
+                </select>
+              </div>
+              
+           
+              <div class="Form-Item">
+                <label>
+                  <p class="Form-Item-Label">
+                    <span class="Form-Item-Label-Required">必須</span>
+                    氏名
+                  </p>
+                </label>
+                <input type="text" class="Form-Item-Input" placeholder="例）山田太郎"
+                  required>
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label"><span
+                    class="Form-Item-Label-Required">必須</span>電話番号</p>
+                <input type="text" class="Form-Item-Input"
+                  placeholder="例）000-0000-0000">
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label"><span
+                    class="Form-Item-Label-Required">必須</span>メールアドレス</p>
+                <input type="email" class="Form-Item-Input"
+                  placeholder="例）example@gmail.com" required>
+              </div>
+              <div class="Form-Item">
+                <p class="Form-Item-Label isMsg">お問い合わせ内容</p>
+                <textarea class="Form-Item-Textarea">
+
+                </textarea>
+              </div>
+
+            </div>
+            <div class="privacy-policy">
+              <h3>個人情報の取り扱い</h3>
+              <div class="privacy_inner">
+                <p>
+                  祈りの里｜瀬戸屋（以下当館）より、ご予約の際に送信いただきます個人情報（住所、氏名、電話番号、メールアドレス等）につきましては、適切かつ安全な管理を行います。それらの情報は厳重に保管し、データの漏洩・改竄が起こらないようその保護に努めます。個人情報の保護について最大限の注意を払い適切な管理・対策を行い、その保護に努めます。
+                </p>
+              </div>
+
+              <div class="chk-agree">
+                <input type="checkbox" id="chkbox" name="policy_doui"
+                  value="1"><label for="chkbox">同意する</label>
+                <input type="submit" class="Form-Btn" id="btn" value="記入内容の確認">
+              </div>
+            </div>
+          </form>
+
+        </section>
+      </article>
+
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <p><a href="index.html">TOPページ</a></p>
+          </li>
+
+          <li>
+            <p><a href="contact.html">お問い合わせ</a></p>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script src="./js/reserv.js" defer></script>
+  </body>
+</html>
