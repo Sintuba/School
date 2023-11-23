@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
   hamburgerIcon.firstChild.textContent = "≡";
   
   let isTopButtonVisible = false;
-
-  
+  window.onload = function() {
+    modalWindow.style.visibility= "hidden"; 
+  };
+ 
   document.querySelectorAll('.left').forEach(elm => {
       elm.onclick = function () {
             let ul = elm.parentNode.querySelector('ul');
@@ -121,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
  }
 
   function getElem(el){
-   
+    
     for(let i = 0; i<el.length;i++){
       //https://developer.mozilla.org/ja/docs/Web/API/Element/getBoundingClientRect
             //                  ↓padding,marginなどの幅も含んだ要素全体が収まる最小の長方形。
@@ -174,9 +176,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const thumbnails = document.querySelectorAll(".item img");
   // const originalImg = document.querySelectorAll("#modalImg ul li");//画像を取得
-  const modalImage = modalD.querySelector("img");
   const modalWindow = document.getElementById("modalD");
+  const modalImage = modalWindow.querySelector("img");
 
+
+  modalImage.addEventListener("click", function(event){
+    closeModal();
+    event.stopPropagation();
+    
+  });
   const showKeyframes = {
     opacity:[0,1],
     visibility:'visible',
@@ -195,19 +203,27 @@ document.addEventListener("DOMContentLoaded", function() {
    
   };
   const modalClose = document.getElementById("modalClose");
-  const modal__close = throttle(() =>{
-    modalWindow.animate(hideKeyframes,options);
-  });
+  const body = document.querySelector("body");
+  const closeModal = (event) => {
+
+    modalWindow.animate(hideKeyframes, options); 
+    modalWindow.style.visibility = (modalWindow.style.visibility === "hidden" ? "visible" : "hidden")
+
+    event.stopPropagation();
+
+  };
+
   
-  modalClose.addEventListener("click",modal__close);
-  modalWindow.addEventListener("click",throttle(()=>modal__close(),1000,true));
+  modalClose.addEventListener("click",closeModal);
+  modalWindow.addEventListener("click",closeModal);
   
   thumbnails.forEach(function(thumbnail,thumbnailIndex){
     thumbnail.addEventListener("click", throttle(function() {
       console.log(thumbnail.src);
     modalImage.src = thumbnail.src;
     modalWindow.animate(showKeyframes,options);
-    
+    modalWindow.style.visibility = (modalWindow.style.visibility === "hidden" ? "visible" : "hidden")
+
     }));
   });
   // console.log(modalWindow);

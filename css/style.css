@@ -873,15 +873,18 @@ padding: 0 8vw;
 }
 
 #modalD{
-  display: none;
+
+  place-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 100% !important;
+  /* max-width: 100% !important; */
+  z-index: 1000;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
 }
+
 #modalClose{
   
   cursor: pointer;
@@ -891,10 +894,11 @@ padding: 0 8vw;
   color: white;
   font-size: 3.5rem;
   text-align: right;
+  cursor: pointer;
 }
-#modalImg{
+/* #modalImg{
   display: none;
-}
+} */
 #modalD img{
   position:absolute;
   top: 0;
@@ -908,6 +912,7 @@ padding: 0 8vw;
 }
 .modalClose{
   position: relative;
+  cursor: pointer;
 }
 /* .facility-gallery img:hover{
   transform: perspective(100px) translateZ(9px);
